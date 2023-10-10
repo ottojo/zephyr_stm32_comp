@@ -1,0 +1,5 @@
+description: STM32 COMP
+
+compatible: st,stm32-comparators
+
+include: [comparator-controller.yaml, pinctrl-device.yaml]

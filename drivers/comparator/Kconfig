@@ -1,0 +1,12 @@
+menuconfig COMPARATOR
+    bool "Comparator drivers"
+
+if COMPARATOR
+
+module = COMPARATOR
+module-str = COMPARATOR
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.stm32"
+
+endif

@@ -1,0 +1,2 @@
+add_subdirectory(drivers/comparator)
+zephyr_system_include_directories(include)

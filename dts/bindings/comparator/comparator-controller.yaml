@@ -1,0 +1,38 @@
+include: base.yaml
+
+properties:
+  "#address-cells":
+    const: 1
+
+  "#size-cells":
+    const: 0
+
+child-binding:
+  properties:
+    status:
+      type: string
+      description: indicates the operational status of a device
+      enum:
+        - "ok" # Deprecated form
+        - "okay"
+        - "disabled"
+        - "reserved"
+        - "fail"
+        - "fail-sss"
+
+    reg:
+      type: array
+      required: true
+      description: Channel identifier.
+
+    zephyr,invert-output:
+      type: boolean
+
+    zephyr,input-positive:
+      type: int
+
+    zephyr,input-negative:
+      type: int
+
+    zephyr,output:
+      type: int
