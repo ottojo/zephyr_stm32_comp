@@ -1,7 +1,7 @@
 config COMPARATOR_STM32
 	bool "STM32 Comparator Driver"
 	default y
-	depends on DT_HAS_ST_STM32_COMPARATORS_ENABLED
+	depends on DT_HAS_ST_STM32F0_COMPARATOR_ENABLED
 	select USE_STM32_HAL_COMP
 	help
 	  Enable the driver implementation for the stm32 COMP

@@ -3,34 +3,33 @@
 
 / {
     soc {
-        comp@4001001c {
-            compatible = "st,stm32-comparators";
+        comp1: comp@4001001c {
+            compatible = "st,stm32f0-comparator";
             status = "okay";
-            reg = <0x4001001C 1>;
+            reg = <0x4001001c 2>;
 
-            #address-cells = <1>;
-            #size-cells = <0>;
-
-            pinctrl-0 = <&comp1_inp_pa1 &comp1_out_pa6 &comp2_inp_pa3 &comp2_out_pa2>;
+            pinctrl-0 = <&comp1_inp_pa1 &comp1_out_pa6>;
             pinctrl-names = "default";
 
-            channel@1 {
-                status = "okay";
-                reg = <1>;
-                zephyr,input-positive = <COMP_NONINVERTINGINPUT_IO1>;
-                zephyr,input-negative = <COMP_INVERTINGINPUT_1_2VREFINT>;
-                /delete-property/ zephyr,invert-output;
-                zephyr,output = <COMP_OUTPUT_NONE>;
-            };
+            zephyr,input-positive = <COMP_NONINVERTINGINPUT_IO1>;
+            zephyr,input-negative = <COMP_INVERTINGINPUT_1_2VREFINT>;
+            /delete-property/ zephyr,invert-output;
+            zephyr,output = <COMP_OUTPUT_NONE>;
 
-            channel@2 {
-                status = "okay";
-                reg = <2>;
-                zephyr,input-positive = <COMP_NONINVERTINGINPUT_IO1>;
-                zephyr,input-negative = <COMP_INVERTINGINPUT_1_2VREFINT>;
-                zephyr,invert-output;
-                zephyr,output = <COMP_OUTPUT_NONE>;
-            };
+        };
+
+        comp2: comp@4001001e {
+            compatible = "st,stm32f0-comparator";
+            status = "okay";
+            reg = <0x4001001e 2>;
+
+            pinctrl-0 = <&comp2_inp_pa3 &comp2_out_pa2>;
+            pinctrl-names = "default";
+
+            zephyr,input-positive = <COMP_NONINVERTINGINPUT_IO1>;
+            zephyr,input-negative = <COMP_INVERTINGINPUT_1_2VREFINT>;
+            //zephyr,invert-output;
+            zephyr,output = <COMP_OUTPUT_NONE>;
         };
     };
 };
