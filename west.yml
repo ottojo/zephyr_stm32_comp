@@ -1,0 +1,12 @@
+manifest:
+  remotes:
+    - name: ottojo
+      url-base: https://github.com/ottojo
+
+  projects:
+    - name: hal_stm32
+      remote: ottojo
+      revision: comp_pinctrl
+      path: modules/hal/stm32
+      groups:
+        - hal
