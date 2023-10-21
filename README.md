@@ -1,4 +1,4 @@
-```dts
+```c
 #include <zephyr/dt-bindings/comparator/stm32.h>
 
 / {
