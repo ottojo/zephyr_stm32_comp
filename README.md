@@ -11,11 +11,10 @@
             pinctrl-0 = <&comp1_inp_pa1 &comp1_out_pa6>;
             pinctrl-names = "default";
 
-            zephyr,input-positive = <COMP_NONINVERTINGINPUT_IO1>;
-            zephyr,input-negative = <COMP_INVERTINGINPUT_1_2VREFINT>;
-            /delete-property/ zephyr,invert-output;
+            zephyr,input-noninverting = <COMP_NONINVERTINGINPUT_IO1>;
+            zephyr,input-inverting = <COMP_INVERTINGINPUT_1_2VREFINT>;
+            zephyr,invert-output;
             zephyr,output = <COMP_OUTPUT_NONE>;
-
         };
 
         comp2: comp@4001001e {
@@ -26,9 +25,8 @@
             pinctrl-0 = <&comp2_inp_pa3 &comp2_out_pa2>;
             pinctrl-names = "default";
 
-            zephyr,input-positive = <COMP_NONINVERTINGINPUT_IO1>;
-            zephyr,input-negative = <COMP_INVERTINGINPUT_1_2VREFINT>;
-            //zephyr,invert-output;
+            zephyr,input-noninverting = <COMP_NONINVERTINGINPUT_IO1>;
+            zephyr,input-inverting = <COMP_INVERTINGINPUT_1_2VREFINT>;
             zephyr,output = <COMP_OUTPUT_NONE>;
         };
     };
