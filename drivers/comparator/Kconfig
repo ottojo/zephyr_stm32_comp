@@ -3,6 +3,12 @@ menuconfig COMPARATOR
 
 if COMPARATOR
 
+config COMP_INIT_PRIORITY
+	int "COMP init priority"
+	default KERNEL_INIT_PRIORITY_DEVICE
+	help
+	  COMP driver device initialization priority.
+
 module = COMPARATOR
 module-str = COMPARATOR
 source "subsys/logging/Kconfig.template.log_config"
